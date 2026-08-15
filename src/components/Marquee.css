@@ -1,0 +1,24 @@
+.marquee-section {
+  padding: 80px 0 140px;
+}
+
+.marquee-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.4vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.55;
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+.marquee-text--dark {
+  color: var(--ink);
+}
+
+.marquee-text--faded {
+  color: var(--ink-faint);
+}
+
+@media (max-width: 600px) {
+  .marquee-text { font-size: 1.05rem; }
+}

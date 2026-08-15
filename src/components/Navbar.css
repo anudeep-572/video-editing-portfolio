@@ -1,0 +1,139 @@
+.nav {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.nav__pill {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: #1A1A1A;
+  border-radius: 100px;
+  padding: 10px 10px 10px 20px;
+  pointer-events: all;
+}
+
+.nav__name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+}
+
+.nav__profile {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav__link {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.6);
+  padding: 6px 14px;
+  border-radius: 100px;
+  transition: color 0.2s ease, background 0.2s ease;
+  letter-spacing: 0.01em;
+}
+
+.nav__link:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+}
+
+.nav__more {
+  display: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: background 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.nav__more:hover {
+  background: rgba(255,255,255,0.18);
+}
+
+.nav__more span {
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+/* Dropdown */
+.nav__dropdown {
+  margin-top: 8px;
+  background: #1A1A1A;
+  border-radius: 16px;
+  overflow: hidden;
+  pointer-events: all;
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+  animation: dropIn 0.2s var(--ease) both;
+}
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.nav__drop-link {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: color 0.2s, background 0.2s;
+  text-decoration: none;
+}
+
+.nav__drop-link:last-child { border-bottom: none; }
+
+.nav__drop-link:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.06);
+}
+
+@media (max-width: 540px) {
+  .nav__pill {
+    flex-direction: row;
+    align-items: center;
+    border-radius: 100px;
+    padding: 10px 10px 10px 20px;
+    gap: 24px;
+  }
+  .nav__links {
+    display: none;
+  }
+  .nav__more {
+    display: flex;
+  }
+}
