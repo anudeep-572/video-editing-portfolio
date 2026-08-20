@@ -10,6 +10,5 @@ I specialize in a variety of video editing styles and formats, including but not
 - **Short-Form Content**: Snappy, attention-grabbing clips optimized for TikTok, Instagram Reels, and YouTube Shorts.
 - **Motion Graphics**: Custom animations, kinetic typography, and visual effects to elevate the production value of any video.
 - **Commercial & Promotional**: Sleek and professional edits for brands, products, and marketing campaigns.
-- **Music Videos**: Creative and rhythmic editing that perfectly complements the music and artist's vision.
 
 Feel free to explore the portfolio to see examples of my work!
