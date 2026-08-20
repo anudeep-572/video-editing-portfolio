@@ -1,6 +1,7 @@
 # Video Editing Portfolio
 
 Welcome to my video editing portfolio! This repository showcases my work in video editing, motion graphics, and post-production. 
+Chechkout the deployed website - https://video-editing-portfolio-lime-eight.vercel.app
 
 ## About My Work
 
