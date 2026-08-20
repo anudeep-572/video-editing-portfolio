@@ -2,10 +2,10 @@ import { useState, useRef } from 'react'
 import './PortfolioGrid.css'
 import Reveal from './Reveal'
 
-const PROJECTS = [
+export const PROJECTS = [
   {
     id: 1,
-    videoId: 'x8JbeNfyWhM',
+    videoId: 'N0LRJDCCk4E',
     title: 'Content',
     type: 'Music Video',
   },
@@ -27,9 +27,46 @@ const PROJECTS = [
     title: 'City Pulse',
     type: 'Documentary',
   },
+  {
+    id: 5,
+    videoId: 'x8JbeNfyWhM',
+    title: 'Talking Head',
+    type: 'Project 5',
+  },
+
 ]
 
-export default function PortfolioGrid() {
+export const LONG_FORM_PROJECTS = [
+  {
+    id: 10,
+    videoId: '-5g389eftK8',
+    title: 'Long Form Motion Graphics',
+    type: 'Motion Graphics',
+  },
+  {
+    id: 11,
+    videoId: 'bodgGHcKzBU',
+    title: 'Long Form Motion Graphics',
+    type: 'Motion Graphics',
+  },
+]
+
+export const THREED_PROJECTS = [
+  {
+    id: 4,
+    videoId: 'FNvcODdnU_I',
+    title: 'City Pulse',
+    type: 'Documentary',
+  },
+  {
+    id: 6,
+    videoId: 'EQQwyNWwso0',
+    title: '3D Animation',
+    type: '3D Animation',
+  },
+]
+
+export default function PortfolioGrid({ id = "portfolio", title = "Featured", projects = [], widescreen = false }) {
   const [activeVideoId, setActiveVideoId] = useState(null)
   const carouselRef = useRef(null)
 
@@ -41,11 +78,11 @@ export default function PortfolioGrid() {
   }
 
   return (
-    <section id="portfolio" className="portfolio">
+    <section id={id} className="portfolio">
       <div className="container">
         <Reveal className="portfolio__header">
           <h2 className="portfolio__heading">
-            Featured<br />Content
+            {title}
           </h2>
           {/* <a href="#contact" className="portfolio__view-all" id="portfolio-view-all"
             onClick={e => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }) }}>
@@ -59,15 +96,15 @@ export default function PortfolioGrid() {
         </Reveal>
 
         <div className="portfolio__carousel" ref={carouselRef}>
-          {PROJECTS.map((p, idx) => (
-            <Reveal key={p.id} className="project-card" delay={0.1 * idx}>
+          {projects.map((p, idx) => (
+            <Reveal key={p.id} className={`project-card${widescreen ? ' project-card--wide' : ''}`} delay={0.1 * idx}>
               <div
                 className="project-card__img-wrap"
                 onClick={() => setActiveVideoId(p.id)}
               >
                 {activeVideoId === p.id ? (
                   <iframe
-                    src={`https://www.youtube.com/embed/${p.videoId}?autoplay=1&rel=0`}
+                    src={`https://www.youtube.com/embed/${p.videoId}?autoplay=1&rel=0&controls=0&modestbranding=1&showinfo=0`}
                     allow="autoplay; fullscreen"
                     allowFullScreen
                     className="project-card__video"

@@ -78,6 +78,11 @@
   scroll-snap-align: start;
 }
 
+/* Widescreen (16:9 / 1920x1080) variant */
+.project-card--wide {
+  flex: 0 0 640px;
+}
+
 .project-card__img-wrap {
   position: relative;
   overflow: hidden;
@@ -87,6 +92,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.project-card--wide .project-card__img-wrap {
+  aspect-ratio: 16 / 9;
 }
 
 .project-card__img {
@@ -178,4 +187,5 @@
 @media (max-width: 680px) {
   .portfolio__header { flex-direction: column; align-items: flex-start; }
   .project-card { flex: 0 0 260px; }
+  .project-card--wide { flex: 0 0 300px; }
 }
